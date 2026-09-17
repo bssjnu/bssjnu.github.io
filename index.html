@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়</title>
+
+    <meta name="description"
+          content="বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয় শাখার অফিসিয়াল ওয়েবসাইট।">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8fa;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #16834a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            color: #16834a;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #16834a;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #087f42, #20a866);
+            color: white;
+            padding: 85px 20px;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #16834a;
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: #16834a;
+            font-size: 30px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .about {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: #16834a;
+            margin-bottom: 8px;
+        }
+
+        .news-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #16834a;
+        }
+
+        .notice {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .join {
+            background: #16834a;
+            color: white;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .join h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #13251c;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #ccc;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo-area">
+            <div class="logo">বশু</div>
+
+            <div class="logo-text">
+                <h1>বসুন্ধরা শুভসংঘ</h1>
+                <p>জগন্নাথ বিশ্ববিদ্যালয় শাখা</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">হোম</a>
+            <a href="#about">আমাদের সম্পর্কে</a>
+            <a href="#activities">কার্যক্রম</a>
+            <a href="#news">সংবাদ</a>
+            <a href="#notice">নোটিশ</a>
+            <a href="#members">সদস্য</a>
+            <a href="#contact">যোগাযোগ</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <div class="hero" id="home">
+        <div class="hero-content">
+
+            <h2>বসুন্ধরা শুভসংঘ</h2>
+
+            <p>
+                জগন্নাথ বিশ্ববিদ্যালয় শাখার অফিসিয়াল ওয়েবসাইটে
+                আপনাকে স্বাগতম।
+            </p>
+
+            <div class="buttons">
+                <a href="#about" class="btn btn-primary">
+                    আমাদের সম্পর্কে
+                </a>
+
+                <a href="#join" class="btn btn-secondary">
+                    সদস্য হোন
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+            <h2>আমাদের সম্পর্কে</h2>
+            <p>মানবিকতা, শিক্ষা ও সামাজিক দায়িত্বের পথে</p>
+        </div>
+
+        <div class="about">
+
+            <p>
+                বসুন্ধরা শুভসংঘ একটি সামাজিক ও মানবিক সংগঠন।
+                জগন্নাথ বিশ্ববিদ্যালয় শাখা শিক্ষার্থী ও তরুণদের
+                অংশগ্রহণে বিভিন্ন সামাজিক, মানবিক, শিক্ষামূলক ও
+                সচেতনতামূলক কার্যক্রম পরিচালনা করে।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTIVITIES -->
+
+    <section id="activities">
+
+        <div class="section-title">
+            <h2>আমাদের কার্যক্রম</h2>
+            <p>শিক্ষার্থী ও সমাজের জন্য আমাদের উদ্যোগ</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>শিক্ষা সহায়তা</h3>
+                <p>
+                    শিক্ষার্থীদের সহায়তা ও শিক্ষামূলক বিভিন্ন
+                    কার্যক্রম পরিচালনা।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>মানবিক কার্যক্রম</h3>
+                <p>
+                    অসহায় ও সুবিধাবঞ্চিত মানুষের পাশে দাঁড়ানোর
+                    বিভিন্ন উদ্যোগ।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>সচেতনতামূলক কর্মসূচি</h3>
+                <p>
+                    সামাজিক ও পরিবেশগত বিভিন্ন বিষয়ে
+                    সচেতনতা তৈরির উদ্যোগ।
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWS -->
+
+    <section id="news">
+
+        <div class="section-title">
+            <h2>সর্বশেষ সংবাদ</h2>
+            <p>সংগঠনের সাম্প্রতিক কার্যক্রম ও সংবাদ</p>
+        </div>
+
+        <div class="news-item">
+            <h3>বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয় শাখার ওয়েবসাইট চালু</h3>
+            <p>
+                আমাদের সংগঠনের কার্যক্রম ও তথ্য সবার কাছে পৌঁছে দিতে
+                এই ওয়েবসাইটের যাত্রা শুরু।
+            </p>
+        </div>
+
+        <div class="news-item">
+            <h3>সামাজিক ও মানবিক কার্যক্রম</h3>
+            <p>
+                সংগঠনের বিভিন্ন কার্যক্রমের সংবাদ এখানে প্রকাশ করা হবে।
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <section id="notice">
+
+        <div class="section-title">
+            <h2>নোটিশ</h2>
+            <p>গুরুত্বপূর্ণ ঘোষণা ও বিজ্ঞপ্তি</p>
+        </div>
+
+        <div class="notice">
+
+            <h3>সদস্য নিবন্ধন শিগগিরই শুরু হবে</h3>
+
+            <p>
+                নতুন সদস্য হওয়ার জন্য অনলাইন নিবন্ধন ফরম
+                খুব শিগগির চালু করা হবে।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMBERS -->
+
+    <section id="members">
+
+        <div class="section-title">
+            <h2>আমাদের সদস্য</h2>
+            <p>সংগঠনের সদস্য ও দায়িত্বশীলদের তথ্য</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>কার্যনির্বাহী কমিটি</h3>
+                <p>
+                    সভাপতি, সাধারণ সম্পাদকসহ কমিটির
+                    সদস্যদের তথ্য এখানে থাকবে।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>সাধারণ সদস্য</h3>
+                <p>
+                    সংগঠনের অনুমোদিত সদস্যদের তালিকা
+                    এখানে প্রকাশ করা হবে।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>সদস্য নিবন্ধন</h3>
+                <p>
+                    সংগঠনের সঙ্গে যুক্ত হতে অনলাইন
+                    আবেদন করতে পারবেন।
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOIN -->
+
+    <section id="join">
+
+        <div class="join">
+
+            <h2>আপনিও যুক্ত হোন</h2>
+
+            <p>
+                মানবিক ও সামাজিক কাজে আমাদের সঙ্গে যুক্ত হতে
+                সদস্য হিসেবে আবেদন করুন।
+            </p>
+
+            <div class="buttons">
+
+                <a href="#" class="btn btn-primary">
+                    সদস্য হতে আবেদন করুন
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>যোগাযোগ</h2>
+            <p>বসুন্ধরা শুভসংঘ, জগন্নাথ বিশ্ববিদ্যালয়</p>
+        </div>
+
+        <div class="about">
+
+            <p><strong>ঠিকানা:</strong> জগন্নাথ বিশ্ববিদ্যালয়, ঢাকা</p>
+
+            <p><strong>Email:</strong> আপনার অফিসিয়াল ইমেইল এখানে দিন</p>
+
+            <p><strong>Facebook:</strong> আমাদের Facebook Page</p>
+
+            <p><strong>YouTube:</strong> আমাদের YouTube Channel</p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <h3>বসুন্ধরা শুভসংঘ</h3>
+
+    <p>জগন্নাথ বিশ্ববিদ্যালয় শাখা</p>
+
+    <p>
+        © 2026 বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়।
+        সর্বস্বত্ব সংরক্ষিত।
+    </p>
+
+</footer>
+
+</body>
+</html>
