@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়</title>
+    <title>বসুন্ধরা শুভসংঘ | জগন্নাথ বিশ্ববিদ্যালয়</title>
 
     <meta name="description"
           content="বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয় শাখার অফিসিয়াল ওয়েবসাইট।">
@@ -16,220 +16,605 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f8fa;
-            color: #222;
+            font-family: Arial, "Noto Sans Bengali", sans-serif;
+            background: #f6f8f7;
+            color: #1f2933;
             line-height: 1.7;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+
         header {
             background: #ffffff;
-            border-bottom: 1px solid #ddd;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
 
         .navbar {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
-            padding: 15px 20px;
+            padding: 14px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
         }
 
-        .logo-area {
+        .brand {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .logo {
+        .brand-logo {
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            background: #16834a;
+            background: #168447;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 16px;
             font-weight: bold;
         }
 
-        .logo-text h1 {
+        .brand h1 {
             font-size: 18px;
-            color: #16834a;
+            color: #168447;
+            line-height: 1.3;
         }
 
-        .logo-text p {
+        .brand p {
             font-size: 12px;
-            color: #666;
+            color: #777;
         }
 
         nav {
             display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
         }
 
         nav a {
-            text-decoration: none;
             color: #333;
             font-size: 14px;
             font-weight: 600;
         }
 
         nav a:hover {
-            color: #16834a;
+            color: #168447;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #087f42, #20a866);
+        .menu-btn {
+            display: none;
+            border: none;
+            background: #168447;
             color: white;
-            padding: 85px 20px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 570px;
+            background:
+                linear-gradient(
+                    rgba(4, 78, 42, 0.82),
+                    rgba(8, 125, 66, 0.82)
+                ),
+                linear-gradient(135deg, #075c35, #23a65f);
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
         }
 
         .hero-content {
-            max-width: 1100px;
+            width: 100%;
+            max-width: 900px;
             margin: auto;
-            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.6);
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
         .hero h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
 
         .hero p {
             max-width: 700px;
             margin: auto;
-            font-size: 17px;
+            font-size: 18px;
+            color: #f1fff6;
         }
 
-        .buttons {
-            margin-top: 28px;
+        .hero-buttons {
+            margin-top: 30px;
         }
 
         .btn {
             display: inline-block;
             padding: 12px 24px;
             margin: 5px;
-            border-radius: 6px;
-            text-decoration: none;
+            border-radius: 7px;
             font-weight: bold;
+            transition: 0.2s;
         }
 
         .btn-primary {
             background: white;
-            color: #16834a;
+            color: #168447;
         }
 
-        .btn-secondary {
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
             border: 1px solid white;
             color: white;
         }
 
+        .btn-outline:hover {
+            background: white;
+            color: #168447;
+        }
+
+        /* GENERAL */
+
         section {
-            max-width: 1100px;
+            max-width: 1180px;
             margin: auto;
-            padding: 65px 20px;
+            padding: 75px 20px;
         }
 
-        .section-title {
+        .section-heading {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 42px;
         }
 
-        .section-title h2 {
-            color: #16834a;
-            font-size: 30px;
+        .section-heading span {
+            color: #168447;
+            font-weight: bold;
+            font-size: 14px;
         }
 
-        .section-title p {
+        .section-heading h2 {
+            font-size: 32px;
+            margin: 5px 0 8px;
+            color: #173b29;
+        }
+
+        .section-heading p {
             color: #777;
         }
 
-        .about {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
         }
+
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .about-box h3 {
+            color: #168447;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .about-highlight {
+            background: #168447;
+            color: white;
+            padding: 40px;
+            border-radius: 14px;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-highlight h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* ACTIVITIES */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .card {
             background: white;
-            padding: 25px;
+            padding: 28px 22px;
+            border-radius: 13px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
             border-radius: 12px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+            background: #e6f6ed;
+            color: #168447;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 18px;
         }
 
         .card h3 {
-            color: #16834a;
             margin-bottom: 8px;
+            color: #173b29;
         }
 
-        .news-item {
+        .card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* NEWS */
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .news-card {
             background: white;
-            padding: 20px;
+            border-radius: 13px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .news-image {
+            height: 180px;
+            background: linear-gradient(135deg, #168447, #57c98a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 17px;
+        }
+
+        .news-content {
+            padding: 22px;
+        }
+
+        .news-date {
+            color: #168447;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .news-content h3 {
+            margin: 7px 0;
+            font-size: 18px;
+        }
+
+        .news-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            color: #168447;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* NOTICE */
+
+        .notice-box {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .notice-item {
+            padding: 20px 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-item h3 {
+            font-size: 16px;
+        }
+
+        .notice-item span {
+            color: #168447;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        /* COMMITTEE */
+
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .member {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 13px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .member-photo {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: #dcefe5;
+            color: #168447;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
             margin-bottom: 15px;
+        }
+
+        .member h3 {
+            font-size: 17px;
+        }
+
+        .member p {
+            color: #168447;
+            font-size: 14px;
+        }
+
+        /* GALLERY */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 190px;
+            background: linear-gradient(135deg, #168447, #76d39e);
             border-radius: 10px;
-            border-left: 4px solid #16834a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 15px;
         }
 
-        .notice {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-        }
+        /* JOIN */
 
-        .join {
-            background: #16834a;
+        .join-section {
+            max-width: 1140px;
+            margin: 0 auto 70px;
+            padding: 70px 25px;
+            background: linear-gradient(135deg, #086337, #169653);
             color: white;
             text-align: center;
-            border-radius: 15px;
+            border-radius: 18px;
         }
 
-        .join h2 {
-            font-size: 30px;
+        .join-section h2 {
+            font-size: 32px;
             margin-bottom: 10px;
         }
 
+        .join-section p {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 13px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-box h3 {
+            color: #168447;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            margin: 8px 0;
+            color: #666;
+        }
+
+        /* FOOTER */
+
         footer {
-            background: #13251c;
+            background: #10261b;
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px 25px;
             text-align: center;
         }
 
-        footer p {
-            color: #ccc;
-            margin: 5px 0;
+        footer h2 {
+            color: #64d59a;
+            margin-bottom: 8px;
         }
 
-        @media (max-width: 800px) {
-            .navbar {
-                flex-direction: column;
-            }
+        footer p {
+            color: #c5d0ca;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 8px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
 
             nav {
-                justify-content: center;
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                flex-direction: column;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
             }
 
             .hero h2 {
-                font-size: 30px;
+                font-size: 38px;
             }
 
             .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .member-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 12px 15px;
+            }
+
+            .brand h1 {
+                font-size: 15px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h2 {
+                font-size: 31px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 55px 15px;
+            }
+
+            .section-heading h2 {
+                font-size: 27px;
+            }
+
+            .about-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .cards,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .member-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .notice-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .join-section {
+                margin: 0 15px 50px;
             }
         }
     </style>
@@ -238,28 +623,41 @@
 <body>
 
 <header>
+
     <div class="navbar">
 
-        <div class="logo-area">
-            <div class="logo">বশু</div>
+        <a href="#home" class="brand">
 
-            <div class="logo-text">
+            <div class="brand-logo">
+                বশু
+            </div>
+
+            <div>
                 <h1>বসুন্ধরা শুভসংঘ</h1>
                 <p>জগন্নাথ বিশ্ববিদ্যালয় শাখা</p>
             </div>
-        </div>
 
-        <nav>
+        </a>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <nav id="menu">
+
             <a href="#home">হোম</a>
             <a href="#about">আমাদের সম্পর্কে</a>
             <a href="#activities">কার্যক্রম</a>
             <a href="#news">সংবাদ</a>
             <a href="#notice">নোটিশ</a>
-            <a href="#members">সদস্য</a>
+            <a href="#committee">কমিটি</a>
+            <a href="#gallery">গ্যালারি</a>
             <a href="#contact">যোগাযোগ</a>
+
         </nav>
 
     </div>
+
 </header>
 
 
@@ -267,47 +665,95 @@
 
     <!-- HERO -->
 
-    <div class="hero" id="home">
+    <section class="hero" id="home">
+
         <div class="hero-content">
 
-            <h2>বসুন্ধরা শুভসংঘ</h2>
+            <div class="hero-tag">
+                জগন্নাথ বিশ্ববিদ্যালয় শাখা
+            </div>
+
+            <h2>
+                বসুন্ধরা শুভসংঘ
+            </h2>
 
             <p>
-                জগন্নাথ বিশ্ববিদ্যালয় শাখার অফিসিয়াল ওয়েবসাইটে
-                আপনাকে স্বাগতম।
+                মানবিকতা, শিক্ষা ও সামাজিক দায়বদ্ধতায়
+                তরুণদের এগিয়ে চলার একটি স্বেচ্ছাসেবী প্ল্যাটফর্ম।
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
+
                 <a href="#about" class="btn btn-primary">
                     আমাদের সম্পর্কে
                 </a>
 
-                <a href="#join" class="btn btn-secondary">
+                <a href="#join" class="btn btn-outline">
                     সদস্য হোন
                 </a>
+
             </div>
 
         </div>
-    </div>
+
+    </section>
 
 
     <!-- ABOUT -->
 
     <section id="about">
 
-        <div class="section-title">
-            <h2>আমাদের সম্পর্কে</h2>
-            <p>মানবিকতা, শিক্ষা ও সামাজিক দায়িত্বের পথে</p>
-        </div>
+        <div class="section-heading">
 
-        <div class="about">
+            <span>আমাদের পরিচয়</span>
+
+            <h2>আমাদের সম্পর্কে</h2>
 
             <p>
-                বসুন্ধরা শুভসংঘ একটি সামাজিক ও মানবিক সংগঠন।
-                জগন্নাথ বিশ্ববিদ্যালয় শাখা শিক্ষার্থী ও তরুণদের
-                অংশগ্রহণে বিভিন্ন সামাজিক, মানবিক, শিক্ষামূলক ও
-                সচেতনতামূলক কার্যক্রম পরিচালনা করে।
+                মানুষের পাশে, সমাজের জন্য
             </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-box">
+
+                <h3>বসুন্ধরা শুভসংঘ</h3>
+
+                <p>
+                    বসুন্ধরা শুভসংঘ একটি সামাজিক ও মানবিক
+                    সংগঠন। জগন্নাথ বিশ্ববিদ্যালয় শাখা
+                    শিক্ষার্থী ও তরুণদের অংশগ্রহণে বিভিন্ন
+                    সামাজিক, মানবিক, শিক্ষামূলক ও
+                    সচেতনতামূলক কার্যক্রম পরিচালনা করে।
+                </p>
+
+                <br>
+
+                <p>
+                    আমাদের লক্ষ্য হলো তরুণদের সামাজিক
+                    দায়িত্ববোধে উদ্বুদ্ধ করা এবং মানুষের
+                    কল্যাণে সম্মিলিতভাবে কাজ করা।
+                </p>
+
+            </div>
+
+
+            <div class="about-highlight">
+
+                <h3>
+                    একসঙ্গে বদলে দিতে পারি
+                </h3>
+
+                <p>
+                    একটি ভালো উদ্যোগ, একটি সহানুভূতিশীল
+                    হাত এবং একসঙ্গে কাজ করার মানসিকতা
+                    সমাজে ইতিবাচক পরিবর্তন তৈরি করতে পারে।
+                </p>
+
+            </div>
 
         </div>
 
@@ -318,35 +764,74 @@
 
     <section id="activities">
 
-        <div class="section-title">
+        <div class="section-heading">
+
+            <span>আমরা যা করি</span>
+
             <h2>আমাদের কার্যক্রম</h2>
-            <p>শিক্ষার্থী ও সমাজের জন্য আমাদের উদ্যোগ</p>
+
+            <p>
+                সমাজ ও মানুষের কল্যাণে বিভিন্ন উদ্যোগ
+            </p>
+
         </div>
+
 
         <div class="cards">
 
             <div class="card">
+
+                <div class="icon">📚</div>
+
                 <h3>শিক্ষা সহায়তা</h3>
+
                 <p>
-                    শিক্ষার্থীদের সহায়তা ও শিক্ষামূলক বিভিন্ন
-                    কার্যক্রম পরিচালনা।
+                    শিক্ষার্থীদের জন্য শিক্ষামূলক ও
+                    সহায়তামূলক বিভিন্ন উদ্যোগ।
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>মানবিক কার্যক্রম</h3>
-                <p>
-                    অসহায় ও সুবিধাবঞ্চিত মানুষের পাশে দাঁড়ানোর
-                    বিভিন্ন উদ্যোগ।
-                </p>
-            </div>
 
             <div class="card">
-                <h3>সচেতনতামূলক কর্মসূচি</h3>
+
+                <div class="icon">🤝</div>
+
+                <h3>মানবিক সহায়তা</h3>
+
                 <p>
-                    সামাজিক ও পরিবেশগত বিভিন্ন বিষয়ে
-                    সচেতনতা তৈরির উদ্যোগ।
+                    অসহায় ও সুবিধাবঞ্চিত মানুষের পাশে
+                    দাঁড়ানোর বিভিন্ন কার্যক্রম।
                 </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🌱</div>
+
+                <h3>পরিবেশ</h3>
+
+                <p>
+                    বৃক্ষরোপণ ও পরিবেশ সচেতনতামূলক
+                    বিভিন্ন কর্মসূচি।
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🧹</div>
+
+                <h3>সামাজিক সচেতনতা</h3>
+
+                <p>
+                    পরিচ্ছন্নতা ও সামাজিক সচেতনতা
+                    তৈরিতে বিভিন্ন উদ্যোগ।
+                </p>
+
             </div>
 
         </div>
@@ -358,24 +843,111 @@
 
     <section id="news">
 
-        <div class="section-title">
-            <h2>সর্বশেষ সংবাদ</h2>
-            <p>সংগঠনের সাম্প্রতিক কার্যক্রম ও সংবাদ</p>
+        <div class="section-heading">
+
+            <span>সর্বশেষ আপডেট</span>
+
+            <h2>সংগঠনের সংবাদ</h2>
+
+            <p>
+                আমাদের কার্যক্রম ও উদ্যোগের খবর
+            </p>
+
         </div>
 
-        <div class="news-item">
-            <h3>বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয় শাখার ওয়েবসাইট চালু</h3>
-            <p>
-                আমাদের সংগঠনের কার্যক্রম ও তথ্য সবার কাছে পৌঁছে দিতে
-                এই ওয়েবসাইটের যাত্রা শুরু।
-            </p>
-        </div>
 
-        <div class="news-item">
-            <h3>সামাজিক ও মানবিক কার্যক্রম</h3>
-            <p>
-                সংগঠনের বিভিন্ন কার্যক্রমের সংবাদ এখানে প্রকাশ করা হবে।
-            </p>
+        <div class="news-grid">
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    কার্যক্রমের ছবি
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        ১৭ সেপ্টেম্বর ২০২৬
+                    </span>
+
+                    <h3>
+                        বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়
+                        শাখার ওয়েবসাইট চালু
+                    </h3>
+
+                    <p>
+                        সংগঠনের কার্যক্রম ও তথ্য সবার কাছে
+                        পৌঁছে দিতে নতুন এই ওয়েবসাইটের যাত্রা।
+                    </p>
+
+                    <a href="#" class="read-more">
+                        বিস্তারিত →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    কার্যক্রমের ছবি
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        সর্বশেষ
+                    </span>
+
+                    <h3>
+                        সংগঠনের নতুন কার্যক্রম
+                    </h3>
+
+                    <p>
+                        এখানে সংগঠনের নতুন সংবাদ ও
+                        কার্যক্রমের তথ্য প্রকাশ করা হবে।
+                    </p>
+
+                    <a href="#" class="read-more">
+                        বিস্তারিত →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    কার্যক্রমের ছবি
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        সর্বশেষ
+                    </span>
+
+                    <h3>
+                        শিক্ষার্থীদের নিয়ে নতুন উদ্যোগ
+                    </h3>
+
+                    <p>
+                        বিভিন্ন সামাজিক ও শিক্ষামূলক
+                        উদ্যোগের খবর এখানে থাকবে।
+                    </p>
+
+                    <a href="#" class="read-more">
+                        বিস্তারিত →
+                    </a>
+
+                </div>
+
+            </article>
+
         </div>
 
     </section>
@@ -385,58 +957,189 @@
 
     <section id="notice">
 
-        <div class="section-title">
-            <h2>নোটিশ</h2>
-            <p>গুরুত্বপূর্ণ ঘোষণা ও বিজ্ঞপ্তি</p>
-        </div>
+        <div class="section-heading">
 
-        <div class="notice">
+            <span>গুরুত্বপূর্ণ তথ্য</span>
 
-            <h3>সদস্য নিবন্ধন শিগগিরই শুরু হবে</h3>
+            <h2>নোটিশ বোর্ড</h2>
 
             <p>
-                নতুন সদস্য হওয়ার জন্য অনলাইন নিবন্ধন ফরম
-                খুব শিগগির চালু করা হবে।
+                সংগঠনের গুরুত্বপূর্ণ বিজ্ঞপ্তি
             </p>
+
+        </div>
+
+
+        <div class="notice-box">
+
+            <div class="notice-item">
+
+                <h3>
+                    নতুন সদস্য নিবন্ধন শিগগিরই শুরু হবে
+                </h3>
+
+                <span>
+                    ১৭ সেপ্টেম্বর ২০২৬
+                </span>
+
+            </div>
+
+
+            <div class="notice-item">
+
+                <h3>
+                    সংগঠনের পরবর্তী কার্যক্রমের বিস্তারিত
+                    পরে জানানো হবে
+                </h3>
+
+                <span>
+                    সর্বশেষ
+                </span>
+
+            </div>
+
+
+            <div class="notice-item">
+
+                <h3>
+                    গুরুত্বপূর্ণ নোটিশ এখানে প্রকাশ করা হবে
+                </h3>
+
+                <span>
+                    নোটিশ
+                </span>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- MEMBERS -->
+    <!-- COMMITTEE -->
 
-    <section id="members">
+    <section id="committee">
 
-        <div class="section-title">
-            <h2>আমাদের সদস্য</h2>
-            <p>সংগঠনের সদস্য ও দায়িত্বশীলদের তথ্য</p>
+        <div class="section-heading">
+
+            <span>আমাদের নেতৃত্ব</span>
+
+            <h2>কার্যনির্বাহী কমিটি</h2>
+
+            <p>
+                কমিটির সদস্যদের তথ্য
+            </p>
+
         </div>
 
-        <div class="cards">
 
-            <div class="card">
-                <h3>কার্যনির্বাহী কমিটি</h3>
+        <div class="member-grid">
+
+            <div class="member">
+
+                <div class="member-photo">
+                    👤
+                </div>
+
+                <h3>
+                    সভাপতির নাম
+                </h3>
+
                 <p>
-                    সভাপতি, সাধারণ সম্পাদকসহ কমিটির
-                    সদস্যদের তথ্য এখানে থাকবে।
+                    সভাপতি
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>সাধারণ সদস্য</h3>
+
+            <div class="member">
+
+                <div class="member-photo">
+                    👤
+                </div>
+
+                <h3>
+                    সাধারণ সম্পাদকের নাম
+                </h3>
+
                 <p>
-                    সংগঠনের অনুমোদিত সদস্যদের তালিকা
-                    এখানে প্রকাশ করা হবে।
+                    সাধারণ সম্পাদক
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>সদস্য নিবন্ধন</h3>
+
+            <div class="member">
+
+                <div class="member-photo">
+                    👤
+                </div>
+
+                <h3>
+                    সদস্যের নাম
+                </h3>
+
                 <p>
-                    সংগঠনের সঙ্গে যুক্ত হতে অনলাইন
-                    আবেদন করতে পারবেন।
+                    সহ-সভাপতি
                 </p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-photo">
+                    👤
+                </div>
+
+                <h3>
+                    সদস্যের নাম
+                </h3>
+
+                <p>
+                    সাংগঠনিক সম্পাদক
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section id="gallery">
+
+        <div class="section-heading">
+
+            <span>ছবি ও স্মৃতি</span>
+
+            <h2>ফটো গ্যালারি</h2>
+
+            <p>
+                আমাদের বিভিন্ন কার্যক্রমের মুহূর্ত
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                ছবি ১
+            </div>
+
+            <div class="gallery-item">
+                ছবি ২
+            </div>
+
+            <div class="gallery-item">
+                ছবি ৩
+            </div>
+
+            <div class="gallery-item">
+                ছবি ৪
             </div>
 
         </div>
@@ -448,19 +1151,22 @@
 
     <section id="join">
 
-        <div class="join">
+        <div class="join-section">
 
-            <h2>আপনিও যুক্ত হোন</h2>
+            <h2>
+                আপনিও যুক্ত হোন আমাদের সঙ্গে
+            </h2>
 
             <p>
-                মানবিক ও সামাজিক কাজে আমাদের সঙ্গে যুক্ত হতে
-                সদস্য হিসেবে আবেদন করুন।
+                সামাজিক ও মানবিক কাজে অংশ নিতে
+                বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়
+                শাখার সঙ্গে যুক্ত হোন।
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
 
                 <a href="#" class="btn btn-primary">
-                    সদস্য হতে আবেদন করুন
+                    সদস্য হওয়ার আবেদন
                 </a>
 
             </div>
@@ -474,20 +1180,61 @@
 
     <section id="contact">
 
-        <div class="section-title">
-            <h2>যোগাযোগ</h2>
-            <p>বসুন্ধরা শুভসংঘ, জগন্নাথ বিশ্ববিদ্যালয়</p>
+        <div class="section-heading">
+
+            <span>যোগাযোগ</span>
+
+            <h2>আমাদের সঙ্গে যোগাযোগ করুন</h2>
+
+            <p>
+                যেকোনো প্রয়োজনে যোগাযোগ করতে পারেন
+            </p>
+
         </div>
 
-        <div class="about">
 
-            <p><strong>ঠিকানা:</strong> জগন্নাথ বিশ্ববিদ্যালয়, ঢাকা</p>
+        <div class="contact-grid">
 
-            <p><strong>Email:</strong> আপনার অফিসিয়াল ইমেইল এখানে দিন</p>
+            <div class="contact-box">
 
-            <p><strong>Facebook:</strong> আমাদের Facebook Page</p>
+                <h3>
+                    সংগঠনের ঠিকানা
+                </h3>
 
-            <p><strong>YouTube:</strong> আমাদের YouTube Channel</p>
+                <p>
+                    📍 জগন্নাথ বিশ্ববিদ্যালয়, ঢাকা
+                </p>
+
+                <p>
+                    ✉️ অফিসিয়াল ইমেইল
+                </p>
+
+                <p>
+                    📱 যোগাযোগ নম্বর
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    অনলাইনে যুক্ত থাকুন
+                </h3>
+
+                <p>
+                    Facebook Page
+                </p>
+
+                <p>
+                    YouTube Channel
+                </p>
+
+                <p>
+                    অন্যান্য সামাজিক যোগাযোগমাধ্যম
+                </p>
+
+            </div>
 
         </div>
 
@@ -496,18 +1243,45 @@
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-    <h3>বসুন্ধরা শুভসংঘ</h3>
-
-    <p>জগন্নাথ বিশ্ববিদ্যালয় শাখা</p>
+    <h2>
+        বসুন্ধরা শুভসংঘ
+    </h2>
 
     <p>
-        © 2026 বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়।
-        সর্বস্বত্ব সংরক্ষিত।
+        জগন্নাথ বিশ্ববিদ্যালয় শাখা
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#home">হোম</a>
+        <a href="#about">আমাদের সম্পর্কে</a>
+        <a href="#news">সংবাদ</a>
+        <a href="#contact">যোগাযোগ</a>
+
+    </div>
+
+    <p>
+        © ২০২৬ বসুন্ধরা শুভসংঘ জগন্নাথ বিশ্ববিদ্যালয়।
     </p>
 
 </footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
