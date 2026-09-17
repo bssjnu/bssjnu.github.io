@@ -1358,67 +1358,16 @@
 </footer>
 
 <script>
-<script>
+<div style="width:100%; overflow:hidden;">
 
-const membersAPI =
-"https://script.google.com/macros/s/AKfycbzE7XtYnt4ixaYjRjVeK9QlghD6nMJSMSymqWgBdXyOa-J91UgfhAo2Em-VKWx6t1o3/exec";
+    <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z8XW_FJT9kTSSMUhjQd0/pubhtml?gid=423156283&single=true"
+        width="100%"
+        height="600"
+        frameborder="0">
+    </iframe>
 
-fetch(membersAPI)
-    .then(response => response.json())
-    .then(members => {
-
-        const container =
-            document.querySelector("#members .member-grid");
-
-        if (!container) return;
-
-        container.innerHTML = "";
-
-        members.forEach(member => {
-
-            if (!member.name) return;
-
-            const card = document.createElement("div");
-
-            card.className = "member";
-
-            card.innerHTML = `
-                <div class="member-photo">
-                    👤
-                </div>
-
-                <h3>${member.name}</h3>
-
-                <p>
-                    ${member.department || ""} |
-                    ${member.batch || ""}
-                </p>
-
-                ${
-                    member.blood
-                    ? `<p>রক্তের গ্রুপ: ${member.blood}</p>`
-                    : ""
-                }
-
-                ${
-                    member.position
-                    ? `<p>${member.position}</p>`
-                    : ""
-                }
-            `;
-
-            container.appendChild(card);
-
-        });
-
-    })
-    .catch(error => {
-
-        console.error("Members API Error:", error);
-
-    });
-
-</script>
+</div>
 
 <script>
 
