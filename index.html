@@ -1359,54 +1359,7 @@
 
 <script>
 
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z3XW_FJT9kTSSMUhjQd0/pub?gid=1638354264&single=true&output=csv";
 
-fetch(sheetURL)
-    .then(response => response.text())
-    .then(data => {
-
-        const rows = data.trim().split("\n").map(row => row.split(","));
-
-        const membersContainer = document.querySelector("#members .member-grid");
-
-        membersContainer.innerHTML = "";
-
-        rows.slice(1).forEach(row => {
-
-            if (!row[0]) return;
-
-            const name = row[0];
-            const id = row[1];
-            const department = row[2];
-            const batch = row[3];
-            const blood = row[4];
-
-            const member = document.createElement("div");
-
-            member.className = "member";
-
-            member.innerHTML = `
-                <div class="member-photo">
-                    👤
-                </div>
-
-                <h3>${name}</h3>
-
-                <p>${department} | ${batch}</p>
-
-                <p>রক্তের গ্রুপ: ${blood}</p>
-            `;
-
-            membersContainer.appendChild(member);
-
-        });
-
-    })
-    .catch(error => {
-        console.log("Member data load error:", error);
-    });
-
-</script>
 <script>
 
 function toggleMenu() {
