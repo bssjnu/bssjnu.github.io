@@ -1358,7 +1358,74 @@
 </footer>
 
 <script>
+<script>
 
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z3XW_FJT9kTSSMUhjQd0/gviz/tq?tqx=out:csv&gid=1638354264";
+
+fetch(sheetURL)
+    .then(response => response.text())
+    .then(data => {
+
+        const rows = data
+            .trim()
+            .split(/\r?\n/)
+            .map(row => {
+                const result = [];
+                const regex = /(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^",]*))/g;
+                let match;
+
+                while ((match = regex.exec(row)) !== null) {
+                    result.push(match[1] !== undefined
+                        ? match[1].replace(/""/g, '"')
+                        : match[2]);
+                }
+
+                return result;
+            });
+
+        const membersContainer =
+            document.querySelector("#members .member-grid");
+
+        if (!membersContainer) return;
+
+        membersContainer.innerHTML = "";
+
+        rows.slice(1).forEach(row => {
+
+            if (!row[0]) return;
+
+            const name = row[0] || "";
+            const department = row[2] || "";
+            const batch = row[3] || "";
+            const blood = row[4] || "";
+
+            const member = document.createElement("div");
+
+            member.className = "member";
+
+            member.innerHTML = `
+                <div class="member-photo">
+                    👤
+                </div>
+
+                <h3>${name}</h3>
+
+                <p>${department} | ${batch}</p>
+
+                <p>রক্তের গ্রুপ: ${blood}</p>
+            `;
+
+            membersContainer.appendChild(member);
+
+        });
+
+    })
+    .catch(error => {
+        console.error("Member data load error:", error);
+    });
+
+</script>
 
 <script>
 
