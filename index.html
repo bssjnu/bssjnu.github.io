@@ -1358,72 +1358,46 @@
 </footer>
 
 <script>
-
-const sheetURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z3XW_FJT9kTSSMUhjQd0/gviz/tq?tqx=out:csv&gid=423156283";
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z8XW_FJT9kTSSMUhjQd0/gviz/tq?tqx=out:csv&gid=423156283";
 
 fetch(sheetURL)
-    .then(response => response.text())
-    .then(data => {
+.then(response => response.text())
+.then(data => {
 
-        const rows = data
-            .trim()
-            .split(/\r?\n/)
-            .map(row => {
-                const result = [];
-                const regex = /(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^",]*))/g;
-                let match;
+    const rows = data.trim().split(/\r?\n/);
 
-                while ((match = regex.exec(row)) !== null) {
-                    result.push(match[1] !== undefined
-                        ? match[1].replace(/""/g, '"')
-                        : match[2]);
-                }
+    const membersContainer =
+        document.querySelector("#members .member-grid");
 
-                return result;
-            });
+    membersContainer.innerHTML = "";
 
-        const membersContainer =
-            document.querySelector("#members .member-grid");
+    rows.slice(1).forEach(row => {
 
-        if (!membersContainer) return;
+        const columns = row.split(",");
 
-        membersContainer.innerHTML = "";
+        if (!columns[0]) return;
 
-        rows.slice(1).forEach(row => {
+        const member = document.createElement("div");
+        member.className = "member";
 
-            if (!row[0]) return;
+        member.innerHTML = `
+            <div class="member-photo">👤</div>
 
-            const name = row[0] || "";
-            const department = row[2] || "";
-            const batch = row[3] || "";
-            const blood = row[4] || "";
+            <h3>${columns[0]}</h3>
 
-            const member = document.createElement("div");
+            <p>${columns[2] || ""} | ${columns[3] || ""}</p>
 
-            member.className = "member";
+            <p>রক্তের গ্রুপ: ${columns[4] || ""}</p>
+        `;
 
-            member.innerHTML = `
-                <div class="member-photo">
-                    👤
-                </div>
-
-                <h3>${name}</h3>
-
-                <p>${department} | ${batch}</p>
-
-                <p>রক্তের গ্রুপ: ${blood}</p>
-            `;
-
-            membersContainer.appendChild(member);
-
-        });
-
-    })
-    .catch(error => {
-        console.error("Member data load error:", error);
+        membersContainer.appendChild(member);
     });
 
+})
+.catch(error => {
+    console.error("Member data error:", error);
+});
 </script>
 
 <script>
