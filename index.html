@@ -1359,39 +1359,50 @@
 
 <script>
 <script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z8XW_FJT9kTSSMUhjQd0/gviz/tq?tqx=out:csv&gid=423156283";
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z8XW_FJT9kTSSMUhjQd0/gviz/tq?tqx=out:json&gid=423156283";
 
 fetch(sheetURL)
 .then(response => response.text())
-.then(data => {
+.then(text => {
 
-    const rows = data.trim().split(/\r?\n/);
+    const json = JSON.parse(
+        text.substring(47, text.length - 2)
+    );
 
-    const membersContainer =
+    const rows = json.table.rows;
+
+    const container =
         document.querySelector("#members .member-grid");
 
-    membersContainer.innerHTML = "";
+    container.innerHTML = "";
 
-    rows.slice(1).forEach(row => {
+    rows.forEach(row => {
 
-        const columns = row.split(",");
+        const cells = row.c || [];
 
-        if (!columns[0]) return;
+        const name = cells[0]?.v || "";
+        const department = cells[2]?.v || "";
+        const batch = cells[3]?.v || "";
+        const blood = cells[4]?.v || "";
+
+        if (!name) return;
 
         const member = document.createElement("div");
+
         member.className = "member";
 
         member.innerHTML = `
             <div class="member-photo">👤</div>
 
-            <h3>${columns[0]}</h3>
+            <h3>${name}</h3>
 
-            <p>${columns[2] || ""} | ${columns[3] || ""}</p>
+            <p>${department} | ${batch}</p>
 
-            <p>রক্তের গ্রুপ: ${columns[4] || ""}</p>
+            <p>রক্তের গ্রুপ: ${blood}</p>
         `;
 
-        membersContainer.appendChild(member);
+        container.appendChild(member);
     });
 
 })
