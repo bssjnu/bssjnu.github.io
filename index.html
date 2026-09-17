@@ -1359,56 +1359,65 @@
 
 <script>
 <script>
-const sheetURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vRgX4_ek4gAaTkM1ln1zCd4YQ4MgKc87LXKwu6bd74mpRhuTWqMUbZrLu41z8XW_FJT9kTSSMUhjQd0/gviz/tq?tqx=out:json&gid=423156283";
 
-fetch(sheetURL)
-.then(response => response.text())
-.then(text => {
+const membersAPI =
+"https://script.google.com/macros/s/AKfycbzE7XtYnt4ixaYjRjVeK9QlghD6nMJSMSymqWgBdXyOa-J91UgfhAo2Em-VKWx6t1o3/exec";
 
-    const json = JSON.parse(
-        text.substring(47, text.length - 2)
-    );
+fetch(membersAPI)
+    .then(response => response.json())
+    .then(members => {
 
-    const rows = json.table.rows;
+        const container =
+            document.querySelector("#members .member-grid");
 
-    const container =
-        document.querySelector("#members .member-grid");
+        if (!container) return;
 
-    container.innerHTML = "";
+        container.innerHTML = "";
 
-    rows.forEach(row => {
+        members.forEach(member => {
 
-        const cells = row.c || [];
+            if (!member.name) return;
 
-        const name = cells[0]?.v || "";
-        const department = cells[2]?.v || "";
-        const batch = cells[3]?.v || "";
-        const blood = cells[4]?.v || "";
+            const card = document.createElement("div");
 
-        if (!name) return;
+            card.className = "member";
 
-        const member = document.createElement("div");
+            card.innerHTML = `
+                <div class="member-photo">
+                    👤
+                </div>
 
-        member.className = "member";
+                <h3>${member.name}</h3>
 
-        member.innerHTML = `
-            <div class="member-photo">👤</div>
+                <p>
+                    ${member.department || ""} |
+                    ${member.batch || ""}
+                </p>
 
-            <h3>${name}</h3>
+                ${
+                    member.blood
+                    ? `<p>রক্তের গ্রুপ: ${member.blood}</p>`
+                    : ""
+                }
 
-            <p>${department} | ${batch}</p>
+                ${
+                    member.position
+                    ? `<p>${member.position}</p>`
+                    : ""
+                }
+            `;
 
-            <p>রক্তের গ্রুপ: ${blood}</p>
-        `;
+            container.appendChild(card);
 
-        container.appendChild(member);
+        });
+
+    })
+    .catch(error => {
+
+        console.error("Members API Error:", error);
+
     });
 
-})
-.catch(error => {
-    console.error("Member data error:", error);
-});
 </script>
 
 <script>
